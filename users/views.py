@@ -1,5 +1,7 @@
-from django.contrib.auth import login
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views import View
 
@@ -51,3 +53,11 @@ class ProfileView(View):
             return render(request, 'users/profile.html', context)
 
         return redirect('login')
+
+
+class LogoutView(LoginRequiredMixin, View):
+    def get(self, request):
+        logout(request)
+        messages.info(request, 'You have been logged out.')
+        return redirect('home')
+

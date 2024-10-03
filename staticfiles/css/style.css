@@ -1,35 +1,33 @@
-body{
+body {
     margin: 3em;
 }
 
 
-.card-img-top{
+.card-img-top {
     width: 60%;
     border-radius: 50%;
     margin: 0 auto;
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
 }
 
 
-.card{
+.card {
     padding: 1.5em .5em .5em;
     text-align: center;
     border-radius: 2em;
-    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
 }
 
-.card-title{
+.card-title {
     font-weight: bold;
     padding: 1.5em;
 }
 
-.btn-primary{
-    border-radius:  2em;
+.btn-primary {
+    border-radius: 2em;
     padding: .5em 1.5em;
 }
 
 
-
 /* Books list style */
-
 

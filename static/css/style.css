@@ -1,5 +1,6 @@
 body{
     margin: 3em;
+    display: revert;
 }
 
 
@@ -20,8 +21,13 @@ body{
 
 .card-title{
     font-weight: bold;
-    padding: 1.5em;
 }
+
+.card-name{
+    font-weight: normal;
+
+}
+
 
 .btn-primary{
     border-radius:  2em;

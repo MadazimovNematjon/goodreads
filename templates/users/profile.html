@@ -1,29 +1,26 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% load static %}
+{% block link %}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-</head>
-<body>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block content %}
+
 {% csrf_token %}
 
 
-<div class="card">
-    <img class='card-img-top' src="{% static 'images/human.png' %}">
+<div class="card" style="width: 18rem">
+    <img class='card-img-top' src="{% static 'images/human.png' %}" alt="no data">
     <div class="card-body">
         <h5 class="card-title">{{ user.username }}</h5>
-        <h6 class="card-name">{{ user.first_name }}</h6>
-        <h6 class="card-name">{{ user.last_name }}</h6>
-        <h6 class="card-name">{{ user.email }}</h6>
+        <h6 class="card-name">First name: {{ user.first_name }}</h6>
+        <h6 class="card-name">Last name: {{ user.last_name }}</h6>
+        <h6 class="card-name">Email:  {{ user.email }}</h6>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, fugit.</p>
         <a role="button" class="btn btn-primary" href="#">Know More</a>
     </div>
 
 </div>
-</body>
-</html>
+{% endblock %}

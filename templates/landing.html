@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Landing Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-</head>
-<body>
-<h1>Landing page</h1>
-<h3>
-    <a role="button" class="btn btn-primary"  href="{% url 'register' %}">Register</a>
-    <a role="button" class="btn btn-primary"  href="{% url 'login' %}">Login</a>
-    <a role="button" class="btn btn-primary"  href="{% url 'list' %}">Books</a>
-    <a role="button" class="btn btn-primary"  href="{% url 'profile' %}">Profile</a>
-     
-</h3>
+{% extends 'base.html' %}
 
-</body>
-</html>
+
+{% block content %}
+
+<h1>Landing page</h1>
+
+
+{% if massages %}
+    {% for message in messages %}
+        {{ message.tages }}
+    {% endfor %}
+{% endif %}
+
+<div class="container">
+
+
+
+
+
+</div>
+
+
+{% endblock %}
