@@ -1,3 +1,5 @@
+from lib2to3.fixes.fix_input import context
+
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -5,7 +7,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views import View
 
-from users.forms import UserCreationForm, UserLoginForm
+from users.forms import UserCreationForm, UserLoginForm, UserUpdateForm
 
 
 class RegisterView(View):
@@ -61,3 +63,21 @@ class LogoutView(LoginRequiredMixin, View):
         messages.info(request, 'You have been logged out.')
         return redirect('home')
 
+
+class ProfileUpdateView(LoginRequiredMixin, View):
+    def get(self, request):
+        user_update_form = UserUpdateForm(instance=request.user)
+        context = {'user_update_form': user_update_form}
+        return render(request, 'users/profile_edit.html', context=context)
+
+
+    def post(self, request):
+        user_update_form = UserUpdateForm(request.POST, instance=request.user,files=request.FILES)
+
+        if user_update_form.is_valid():
+            user_update_form.save()
+            messages.success(request, 'Your profile has been updated.')
+            return redirect('profile')
+
+
+        return render(request, 'users/profile_edit.html', {'user_update_form': user_update_form})

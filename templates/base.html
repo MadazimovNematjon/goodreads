@@ -11,6 +11,13 @@
     {% block link %}{% endblock %}
 </head>
 <body class="mx-5">
+
+
+
+
+
+
+
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">Goodreads</a>
@@ -52,6 +59,18 @@
         </div>
     </div>
 </nav>
+
+
+{% if message %}
+
+{% for message in messages %}
+<div class="alert alert-primary" role="alert">
+    {{message.tages}}
+</div>
+
+{% endfor %}
+{% endif %}
+
 
 {% block content %}
 {% endblock %}

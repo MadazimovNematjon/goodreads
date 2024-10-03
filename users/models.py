@@ -1,3 +1,8 @@
+from django.contrib.auth.models import AbstractUser
+from django.core.validators import FileExtensionValidator
 from django.db import models
 
-# Create your models here.
+
+class CustomUser(AbstractUser):
+    profile_picture = models.ImageField(upload_to='profile',null=True,blank=True,
+                                        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'png'])])
