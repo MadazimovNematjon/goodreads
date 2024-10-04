@@ -32,7 +32,7 @@ class BookAuthor(models.Model):
 
 class BookReview(models.Model):
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE ,related_name='reviews')
     review_text = models.TextField()
     stars_given = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
 

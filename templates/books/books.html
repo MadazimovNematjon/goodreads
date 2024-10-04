@@ -5,14 +5,22 @@
     <link rel="stylesheet" href="{% static 'css/book.css' %}">
 {% endblock %}
 {% block content %}
-    {% csrf_token %}
 
+    <div class="row mb-5">
+        <div class="col-4">
+            <form class="d-flex" method="get">
+                    <input type="search" class="form-control me-2" placeholder="Search" name="q">
+                    <button class="btn btn-outline-primary">Search</button>
+                </form>
+
+        </div>
+    </div>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">  <!-- g-4 for gap between cards -->
         {% for page in pages.object_list %}
             <div class="col">
-                <div class="card h-200 shadow-sm">  <!-- h-100 makes cards the same height -->
-                    <img src="{{ page.cover_image.url }}" class="card-img-top" alt="{{ book.title }}">
+                <div class="card_book card  h-200 shadow-sm">  <!-- h-100 makes cards the same height -->
+                    <img src="{{ page.cover_image.url }}" class="card_book_img" alt="{{ book.title }}">
                     <div class="card-body">
                         <h5 class="card-title">{{ page.title }}</h5>
                         <p class="card-text">{{ page.description|truncatewords:"8" }}</p>
