@@ -1,0 +1,12 @@
+.card {
+    transition: transform 0.2s;  /* Hover effect for scaling */
+}
+
+.card:hover {
+    transform: scale(1.05);  /* Slightly scale the card on hover */
+}
+
+.card img {
+    height: 250px;  /* Set a fixed height for the images */
+    object-fit: cover;  /* Cover the entire area without distorting the image */
+}

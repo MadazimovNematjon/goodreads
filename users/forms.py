@@ -1,5 +1,6 @@
 from django import forms
 from users.models import CustomUser
+
 """
 # form bilan qilish usuli
 class UserCreationForm(forms.Form):
@@ -30,7 +31,7 @@ class UserCreationForm(forms.Form):
 class UserCreationForm(forms.ModelForm):
     class Meta:
         model = CustomUser
-        fields = ('username', 'email', 'first_name', 'last_name', 'password')
+        fields = ('username', 'email', 'first_name', 'last_name', 'password', 'profile_picture')
 
     def save(self, commit=True):
         user = super(UserCreationForm, self).save(commit=False)
@@ -43,10 +44,12 @@ class UserLoginForm(forms.Form):
     username = forms.CharField(max_length=150)
     password = forms.CharField(max_length=128, widget=forms.PasswordInput)
 
+    class Meta:
+        model = CustomUser
+        fields = ('username', 'password')
 
 
 class UserUpdateForm(forms.ModelForm):
     class Meta:
         model = CustomUser
         fields = ('username', 'email', 'first_name', 'last_name')
-

@@ -1,21 +1,23 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 
 {% block title %}
-Edit Profile Page
+    Edit Profile Page
 {% endblock %}
 
 {% block content %}
-<h1>Edit profile page</h1>
+    <div class="container">
+        <h1>Edit profile page</h1>
 
 
-<!--rasim va text yuborilganda enctype="multipart/form-data qo'laniladi -->
-<form action="{% url 'profile-edit' %}" method="post"  enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ user_update_form.as_p}}
+        <!--rasim va text yuborilganda enctype="multipart/form-data qo'laniladi -->
+        <form action="{% url 'profile-edit' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ user_update_form | crispy }}
 
 
-    <button class="btn btn-primary" type="submit">Save</button>
-</form>
+            <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+    </div>
 
-{% endblock%}
+{% endblock %}

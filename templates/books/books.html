@@ -1,17 +1,65 @@
 {% extends 'base.html' %}
-{% load static %}  <!-- Add this line to load the static tag -->
+{% load static %}
+{% block link %}
 
-
+    <link rel="stylesheet" href="{% static 'css/book.css' %}">
+{% endblock %}
 {% block content %}
     {% csrf_token %}
 
-    {% for book in books %}
 
-        <div class="container">
-            <h5>{{ book.title }}</h5>
-            <p>{{ book.description }}</p>
-        </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-5">  <!-- g-4 for gap between cards -->
+        {% for page in pages.object_list %}
+            <div class="col">
+                <div class="card h-200 shadow-sm">  <!-- h-100 makes cards the same height -->
+                    <img src="{{ page.cover_image.url }}" class="card-img-top" alt="{{ book.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ page.title }}</h5>
+                        <p class="card-text">{{ page.description|truncatewords:"8" }}</p>
+                        <a href="{% url 'detail' page.id %}" class="btn btn-primary">Know More</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
-    {% endfor %}
 
+
+
+
+    <nav>
+        <ul class="pagination">
+
+            {% if pages.has_previous %}
+                <li class="page-item "><a class="page-link" href="?page=1">&laquo; First</a>
+                </li>
+
+                <li class="page-item "><a class="page-link"
+                                          href="{% url 'list' %}?page={{ pages.previous_page_number }} ">Previous</a>
+                </li>
+            {% endif %}
+
+
+
+            <li class="page-item active">
+                <a class="page-link" href="#">{{ pages.number }}</a>
+            </li>
+
+
+
+
+
+            {% if pages.has_next %}
+                <li class="page-item "><a class="page-link" href="{% url 'list' %}?page={{ pages.next_page_number }}">Next</a>
+                </li>
+
+                <li class="page-item "><a class="page-link"
+                                          href="{% url 'list' %}?page={{ pages.paginator.num_pages }}">Last&raquo;</a>
+                </li>
+
+            {% endif %}
+
+
+        </ul>
+    </nav>
 {% endblock %}

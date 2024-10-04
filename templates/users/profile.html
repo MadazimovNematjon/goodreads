@@ -9,19 +9,19 @@
 
 {% block content %}
 
-{% csrf_token %}
+    {% csrf_token %}
 
 
-<div class="card" style="width: 18rem">
-    <img class='card-img-top' src="{{ user.profile_picture.url  }}" alt="no data">
-    <div class="card-body">
-        <h5 class="card-title">{{ user.username }}</h5>
-        <h6 class="card-name">First name: {{ user.first_name }}</h6>
-        <h6 class="card-name">Last name: {{ user.last_name }}</h6>
-        <h6 class="card-name">Email:  {{ user.email }}</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, fugit.</p>
-        <a class="btn btn-primary" href="{% url 'profile-edit' %}" role="button">Edit</a>
+    <div class="card" style="width: 18rem">
+        <img class='card-img-top' src="{{ user.profile_picture.url }}" alt="no data">
+        <div class="card-body">
+            <h5 class="card-title">{{ user.username }}</h5>
+            <h6 class="card-name">First name: {{ user.first_name }}</h6>
+            <h6 class="card-name">Last name: {{ user.last_name }}</h6>
+            <h6 class="card-name">Email: {{ user.email }}</h6>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, fugit.</p>
+            <a class="btn btn-primary" href="{% url 'profile-edit' %}" role="button">Edit</a>
+        </div>
+
     </div>
-
-</div>
 {% endblock %}
