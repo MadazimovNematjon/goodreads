@@ -2,11 +2,12 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from users.models import CustomUser
 
+
 class Book(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     isbn = models.CharField(max_length=17)
-    cover_image = models.ImageField(upload_to='books/',null=True, blank=True)
+    cover_image = models.ImageField(upload_to='books/', null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -31,11 +32,12 @@ class BookAuthor(models.Model):
 
 
 class BookReview(models.Model):
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='reviews')
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE ,related_name='reviews')
     review_text = models.TextField()
-    stars_given = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
-
+    stars_given = models.PositiveSmallIntegerField(max_length=1,
+                                                   validators=[MinValueValidator(1), MaxValueValidator(5)])
+    created_at = models.DateTimeField(auto_now_add=True, editable=False)
 
     def __str__(self):
         return f"{self.author}  {self.book}  {self.review_text}"

@@ -19,10 +19,11 @@ from django.urls import path, include
 from django.conf.urls.static import static
 
 from . import settings
-from .views import landing
+from .views import landing, home_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('home/', home_page, name='home_page'),
     path('', landing, name='home'),
     path('users/', include('users.urls'), name='user'),
     path('books/', include('books.urls'), name='books'),
@@ -30,4 +31,3 @@ urlpatterns = [
 if settings.DEBUG:
     # urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT )
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

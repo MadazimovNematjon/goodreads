@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home Page {% endblock %}
+
+
+{% block content %}
+    <h3>Home Page</h3>
+
+
+
+
+
+    <div class="row row-cols-1  row-cols-lg-2 g-4">
+        {% for review in book_reviews %}
+
+            <div class="col">
+
+                <div class="card" style="width: 100%;">
+                    <div class="row">
+                        <h5>Profile</h5>
+                        <h5>Profile</h5>
+                    </div>
+
+                    <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <img src="{% static './images/human.png' %}" class="card-img-top" alt="...">
+
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+
+
+{% endblock %}

@@ -2,11 +2,14 @@
 
 {% load static %}
 
+{% load crispy_forms_tags %}]
 
 {% block link %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 {% endblock %}
 {% block content %}
+
+
 
     <div class="row align-items-start mb-4">
         <div class="col-3 mb-3">
@@ -19,26 +22,44 @@
         </div>
     </div>
 
-    <h4>Reviews</h4>
-    <hr>
-    {% for review in book.reviews.all %}
 
 
-        <div class="row mb-3">
-            <div class="col-1 me-2" >
-                <img class ='author_img' src="{{ review.author.profile_picture.url }}" alt="">
-            </div>
+    <div class="row mb-5">
+        <div class="col-6">
 
-            <div class="col-7">
-                <b>{{ review.author.username }}</b>
-                <h6>read it {{ review.stars_given }} stars</h6>
-                <p class="mt-2 font-monospace">
-                    {{ review.review_text }}
-                </p>
+            <form method="post" action="{% url 'reviews' book.pk %}">
+                {% csrf_token %}
 
-            </div>
+                {{ review_form | crispy }}
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+
         </div>
+    </div>
 
-    {% endfor %}
+
+
+    {% if book.reviews.exists %}
+
+        <h4>Reviews</h4>
+        <hr>
+        {% for review in book.reviews.all %}
+            <div class="row mb-3">
+                <div class="col-1 me-2">
+                    <img class='author_img' src="{{ review.author.profile_picture.url }}" alt="">
+                </div>
+
+                <div class="col-7">
+                    <b>{{ review.author.username }}</b>
+                    <h6>read it {{ review.stars_given }} stars</h6>
+                    <p class="mt-2 font-monospace">
+                        {{ review.review_text }}
+                    </p>
+
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
 
 {% endblock %}
