@@ -1,38 +1,45 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Home Page {% endblock %}
-
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
 
 {% block content %}
     <h3>Home Page</h3>
 
-
-
-
-
-    <div class="row row-cols-1  row-cols-lg-2 g-4">
+    <div class="row row-cols-1 row-cols-lg-2 g-5">
         {% for review in book_reviews %}
-
             <div class="col">
-
-                <div class="card" style="width: 100%;">
-                    <div class="row">
-                        <h5>Profile</h5>
-                        <h5>Profile</h5>
+                <div class="card">
+                    <div class="container">
+                        <div class="row mini">
+                            <div class="col-md-4 card-img">
+                                <!-- Author image with existence check -->
+                                <img class="author_img" src="{{ review.author.profile_picture.url  }}" alt="Profile picture of {{ review.author.username }}">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <!-- Author name -->
+                                    <h4>{{ review.author.username }}</h4>
+                                    <!-- Formatted date -->
+                                    <p class="sub-title">{{ review.created_at|date:"d M Y" }}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <img src="{% static './images/human.png' %}" class="card-img-top" alt="...">
+                        <!-- Review text with read more link -->
+                        <p class="card-text">
+                            {{ review.review_text |truncatewords:20 }}...
+                        </p>
 
+                        <!-- Book cover image with existence check -->
+                        <img class="book_img" src="{{ review.book.cover_image.url }}" class="ui-rect ui-bg-cover" alt="Cover image of {{ review.book.title }}">
                     </div>
                 </div>
             </div>
         {% endfor %}
     </div>
-
-
-
-
 {% endblock %}

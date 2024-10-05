@@ -82,7 +82,7 @@ class AddReviewView(LoginRequiredMixin, View):
                 stars_given=review_form.cleaned_data['stars_given'],
                 review_text=review_form.cleaned_data['review_text'],
             )
-            return redirect(reverse('book_detail', kwargs={'pk': pk}))
+            return redirect(reverse('detail', kwargs={'pk': pk}))
         context = {
             'book': book,
             'review_form': review_form,

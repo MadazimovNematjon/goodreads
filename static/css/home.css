@@ -1,0 +1,51 @@
+.author_img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0.5rem auto;
+
+
+}
+
+
+.mini {
+    align-items: center;
+}
+
+
+.card-img {
+    width: 120px;
+    height: 120px;
+
+}
+
+
+h4 {
+    color: black;
+}
+
+.sub-title {
+    color: gray;
+}
+
+.book_img {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+
+.card {
+    width: 600px;
+    height: 800px;
+    overflow: hidden; /* Rasmdan chiqib ketgan qismlarini yashiradi */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}

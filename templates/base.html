@@ -26,8 +26,14 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <a class="navbar-brand" href="{% url 'home_page' %}">Home</a>
-                <a class="navbar-brand" href="{% url 'list' %}">Books</a>
+                <li class="nav-item" >
+                    <a class="nav-link {% if request.path == '/home/' %} active {% endif %}" aria-current="page"
+                       href="{% url 'home_page' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/list/' %} active {% endif %}" aria-current="page"
+                       href="{% url 'list' %}">Books</a>
+                </li>
             </ul>
 
             <div class='me-5'>
