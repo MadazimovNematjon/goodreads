@@ -15,9 +15,22 @@
         <div class="col-3 mb-3">
             <img src="{{ book.cover_image.url }}" style="width: 90%" alt="Cover Image">
         </div>
-        <div class="col-md-9 col-12">
+        <div class="col-6  ms-3">
             <h3>{{ book.title }}</h3>
-            <hr>
+
+            <span class="fst-italic">
+            Author by:
+                {% for author in book.authors.all %}
+                    {% if forloop.last %}
+                        {{ author.author.full_name }}
+                    {% else %}
+                        {{ author.author.full_name }},
+                    {% endif %}
+                {% endfor %}
+            </span>
+            <br>
+            <br>
+
             <p>{{ book.description }}</p>
         </div>
     </div>

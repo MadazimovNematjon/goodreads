@@ -27,6 +27,7 @@ urlpatterns = [
     path('', landing, name='home'),
     path('users/', include('users.urls'), name='user'),
     path('books/', include('books.urls'), name='books'),
+    path('api/', include('api.urls'), name='api')
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT )

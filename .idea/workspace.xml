@@ -4,20 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="41ba0725-005e-4816-8596-24685a50b7bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+    <list default="true" id="41ba0725-005e-4816-8596-24685a50b7bf" name="Changes" comment="book authors">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2024_6_55_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2024_6_55_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/serialisers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goodreads_2/celary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/singnals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/tasks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/goodreads_2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/goodreads_2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2024_8_07_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_4_2024_8_07_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2024_10_35_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_5_2024_10_35_AM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/books/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/books/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goodreads_2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/goodreads_2/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goodreads_2/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/goodreads_2/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/goodreads_2/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/goodreads_2/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/book.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/book.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/books/book_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/books/book_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -58,7 +64,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "G:/DEV/python/goodreads_2",
+    "last_opened_file_path": "D:/GitHub/goodreads_2",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -146,7 +152,19 @@
       <updated>1727942127555</updated>
       <workItem from="1727942128571" duration="10731000" />
       <workItem from="1727966319119" duration="7664000" />
+      <workItem from="1728219901990" duration="3498000" />
+      <workItem from="1728223506428" duration="6106000" />
+      <workItem from="1728231084119" duration="4822000" />
     </task>
+    <task id="LOCAL-00001" summary="book authors">
+      <option name="closed" value="true" />
+      <created>1728145204179</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1728145204179</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,6 +180,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="book authors" />
+    <option name="LAST_COMMIT_MESSAGE" value="book authors" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/goodreads_2$views.coverage" NAME="views Coverage Results" MODIFIED="1727958866033" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/users" />
